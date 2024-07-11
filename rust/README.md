@@ -1,7 +1,9 @@
 # Rust
 
-## Installation instruction
+## Installation
 
-https://www.rust-lang.org/tools/install
+https://github.com/JuliaLang/julia
 
+## Initializing project
 
+## Run main
