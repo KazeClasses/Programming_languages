@@ -1,0 +1,19 @@
+name: Python
+'on':
+- push
+- repository_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  test-sort:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Test with pytest
+      run: |
+        pytest
