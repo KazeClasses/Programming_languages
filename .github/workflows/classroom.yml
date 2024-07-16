@@ -35,6 +35,6 @@ jobs:
       uses: education/autograding-grading-reporter@v1
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
-        # RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
+        RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
         runners: rust-test-sort
