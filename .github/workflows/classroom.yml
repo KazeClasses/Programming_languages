@@ -30,7 +30,7 @@ jobs:
         test-name: 'Test rust'
         command: 'cargo test --verbose'
         timeout: '10'
-      working-directory: rust
+        working-directory: rust
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
