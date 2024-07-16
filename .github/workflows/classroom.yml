@@ -8,8 +8,8 @@ permissions:
   actions: read
   contents: read
 
-env:
-  CARGO_TERM_COLOR: always
+# env:
+#   CARGO_TERM_COLOR: always
 
 jobs:
   run-autograding-tests:
@@ -34,6 +34,6 @@ jobs:
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
-        RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
+        # RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: rust-test-sort
+        runners: python-test-sort
