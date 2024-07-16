@@ -1,4 +1,4 @@
-# Implementing insertion sort in Python, Julia, rust
+# Implementing insertion sort in Python, Julia, Rust
 
 In this lab, you will need to implement one of the simplest sorting algorithms - insertion sort in Python, Julia, and Rust.
 
