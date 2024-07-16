@@ -28,7 +28,7 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: 'Test rust'
-        setup-command: ''cd ./rust'
+        setup-command: 'cd ./rust'
         command: 'cargo test --verbose'
         timeout: '10'
     - name: Autograding Reporter
