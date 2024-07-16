@@ -25,10 +25,10 @@ jobs:
         timeout: 10
         setup-command: ''
     - name: Run rust test
-      id: rust-test-sort
+      id: rusttestsort
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: rust-test-sort
+        test-name: rusttestsort
         command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
         timeout: '10'
     - name: Autograding Reporter
@@ -37,4 +37,4 @@ jobs:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         # RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: rust-test-sort
+        runners: rusttestsort
