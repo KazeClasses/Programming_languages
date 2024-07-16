@@ -20,21 +20,21 @@ jobs:
       uses: actions/checkout@v4
     - name: Python test sort
       id: python-test-sort
-      uses: classroom-resources/autograding-python-grader@v1
+      uses: education/autograding-python-grader@v1
       with:
         timeout: 10
         setup-command: ''
     - name: Run rust test
-      id: rusttestsort
-      uses: classroom-resources/autograding-command-grader@v1
+      id: rust-test-sort
+      uses: education/autograding-command-grader@v1
       with:
-        test-name: rusttestsort
+        test-name: 'rust-test-sort'
         command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
         timeout: '10'
     - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
+      uses: education/autograding-grading-reporter@v1
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         # RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: rusttestsort
+        runners: rust-test-sort
