@@ -32,9 +32,9 @@ jobs:
         command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
         timeout: '10'
     - name: Autograding Reporter
-      uses: ./
+      uses: education/autograding-grading-reporter@v1
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: rust-test-sort
+        runners: python-test-sort, rust-test-sort
