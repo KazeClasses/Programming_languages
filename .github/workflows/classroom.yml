@@ -37,4 +37,4 @@ jobs:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: python-test-sort , rust-test-sort
+        runners: 'python-test-sort,rust-test-sort'
