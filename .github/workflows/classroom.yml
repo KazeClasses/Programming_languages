@@ -25,6 +25,7 @@ jobs:
         timeout: 10
         setup-command: ''
     - name: Run rust test
+      working-directory: ./rust
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: 'Test rust'
