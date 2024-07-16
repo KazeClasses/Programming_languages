@@ -4,7 +4,6 @@ import time
 N = 100
 random.seed(int(time.time()))
 
-
 def insertion_sort(unsorted_list: list[int]) -> list[int]:
     # Implement your function here ...
     raise NotImplementedError
