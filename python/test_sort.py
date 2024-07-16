@@ -10,7 +10,7 @@ def insertion_sort(unsorted_list: list[int]) -> list[int]:
 
 
 # Do not change the following lines
-if __name__ == "__main__":
+def test_insertion_sort():
     input_list = list(range(N))
     random.shuffle(input_list)
     output_list = insertion_sort(input_list)
