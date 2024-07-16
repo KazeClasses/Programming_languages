@@ -25,6 +25,7 @@ jobs:
         timeout: 10
         setup-command: ''
     - name: Run rust test
+      id: rust-test-sort
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: rust-test-sort
@@ -36,4 +37,4 @@ jobs:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         # RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
       with:
-        runners: python-test-sort
+        runners: rust-test-sort
