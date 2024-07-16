@@ -28,11 +28,11 @@ jobs:
       id: rust-test-sort
       uses: education/autograding-command-grader@v1
       with:
-        test-name: 'rust-test-sort'
+        test-name: rust-test-sort
         command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
         timeout: '10'
     - name: Autograding Reporter
-      uses: education/autograding-grading-reporter@v1
+      uses: ./
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
         RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
