@@ -28,12 +28,12 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: 'Test rust'
-        setup-command: 'cd rust'
-        command: 'cargo test --verbose'
+        command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
         timeout: '10'
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
+        RUST-TEST_RESULTS: "${{steps.Run rust test.outputs.result}}"
       with:
         runners: python-test-sort
