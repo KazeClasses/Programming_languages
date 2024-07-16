@@ -1,40 +1,22 @@
-name: Autograding Tests
+name: Rust
 'on':
 - push
 - repository_dispatch
+
 
 permissions:
   checks: write
   actions: read
   contents: read
 
-# env:
-#   CARGO_TERM_COLOR: always
+env:
+  CARGO_TERM_COLOR: always
 
 jobs:
-  run-autograding-tests:
+  test-sort:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-classroom[bot]'
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Python test sort
-      id: python-test-sort
-      uses: education/autograding-python-grader@v1
-      with:
-        timeout: 10
-        setup-command: ''
-    - name: Run rust test
-      id: rust-test-sort
-      uses: education/autograding-command-grader@v1
-      with:
-        test-name: rust-test-sort
-        command: 'cargo test --verbose --manifest-path rust/Cargo.toml'
-        timeout: '10'
-    - name: Autograding Reporter
-      uses: education/autograding-grading-reporter@v1
-      env:
-        PYTHON-TEST-SORT_RESULTS: "${{steps.python-test-sort.outputs.result}}"
-        RUST-TEST_RESULTS: "${{steps.rust-test-sort.outputs.result}}"
-      with:
-        runners: python-test-sort, rust-test-sort
+      - uses: actions/checkout@v4
+      - name: cargo test
+        run: cargo test --all-features
+        working-directory: ./rust
