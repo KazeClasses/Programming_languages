@@ -26,11 +26,10 @@ jobs:
         setup-command: ''
     - name: Run rust test
       uses: classroom-resources/autograding-command-grader@v1
-      working-directory: ./rust
       with:
         test-name: 'Test rust'
         setup-command: 'cargo build'
-        command: 'cargo test --verbose'
+        command: 'cd ./rust && cargo test --verbose'
         timeout: '10'
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
